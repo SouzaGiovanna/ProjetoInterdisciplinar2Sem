@@ -11,6 +11,7 @@
 
 :root{
   --color-button: #3b73f7;
+  --color-background: #5200FF;
 }
 
 body {
@@ -71,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 997;
   transition: all 0.5s;
   padding: 15px 0;
-  background: #5200FF;
+  background: var(--color-background);
 }
 
 #header .logo h1 {
@@ -1284,12 +1285,12 @@ section {
   color: #fff;
 }
 
-.contact .php-email-form {
+/* .contact .php-email-form {
   width: 100%;
   padding: 30px;
   background: #fff;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-}
+} */
 
 .contact .php-email-form .form-group {
   padding-bottom: 8px;
@@ -1346,7 +1347,7 @@ section {
 }
 
 .contact .php-email-form input, .contact .php-email-form textarea {
-  border-radius: 0;
+  border-radius: .5rem;
   box-shadow: none;
   font-size: 14px;
 }
@@ -1360,16 +1361,19 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: var(--color-button);
+  background: var(--color-background);
   border: 0;
   padding: 10px 24px;
   color: #fff;
   transition: 0.4s;
   border-radius: 4px;
+  border: solid;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: var(--color-button);
+  background: #fff;
+  color: var(--color-background);
+  border-radius: .5rem;
 }
 
 @-webkit-keyframes animate-loading {
