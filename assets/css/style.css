@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   right: 15px;
   bottom: 15px;
-  background: var(--color-button);
+  background: var(--color-background);
   color: #fff;
   transition: display 0.5s ease-in-out;
   z-index: 99999;
@@ -59,7 +59,36 @@ h1, h2, h3, h4, h5, h6 {
 
 .back-to-top:hover {
   color: #fff;
-  background: var(--color-button);
+  background: var(--color-background);
+  transition: background 0.2s ease-in-out;
+}
+
+/*--------------------------------------------------------------
+# Modo Escuro button
+--------------------------------------------------------------*/
+.modo-escuro {
+  position: fixed;
+  /* display: none; */
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  left: 15px;
+  top: 85px;
+  background: var(--color-background);
+  color: #fff;
+  transition: display 0.5s ease-in-out;
+  z-index: 99999;
+}
+
+.modo-escuro i {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.modo-escuro:hover {
+  color: #fff;
+  background: var(--color-background);
   transition: background 0.2s ease-in-out;
 }
 
@@ -432,7 +461,7 @@ section {
 }
 
 .separator {
-  background-color: #5200FF;
+  background-color: --var(--color-background);
   color: #fff; 
 }
 
