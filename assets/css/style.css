@@ -94,7 +94,21 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 99999;
 }
 
-.modo-escuro i, .modo-escuro-branco i {
+.modo-escuro-branco-cad{
+  position: fixed;
+  /* display: none; */
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  left: 15px;
+  top: 15px;
+  background: #fff;
+  color: var(--color-background);
+  transition: display 0.5s ease-in-out;
+  z-index: 99999;
+}
+
+.modo-escuro i, .modo-escuro-branco i, .modo-escuro-branco-cad i {
   position: absolute;
   top: 8px;
   left: 8px;
@@ -1643,22 +1657,40 @@ section {
   padding: 2rem;
 }
 
-#form-login form{
+#form-cadastro{
+  background-color: #fff;
+  height: 100%;
+  width: max-content;
+  margin-top: 5%;
+  margin-right: 3.5%;
+  margin-bottom: 5%;
+  border-radius: 10rem 0rem 0rem 10rem;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#form-cadastro form{
+  padding-top: 2rem;
+  padding-left: 5rem;
+  padding-bottom: 2rem;
+}
+
+#form-login form, #form-cadastro form{
   height: 100%;
 }
 
-#form-login h3{
+#form-login h3, #form-cadastro h3{
   color: #000;
   margin-bottom: 2rem;
 }
 
-#form-login h5{
+#form-login h5, #form-cadastro h5{
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-#form-login a{
+#form-login a, #form-cadastro a{
   text-decoration: underline;
   font-weight: bold;
 }
@@ -1668,6 +1700,13 @@ section {
   border: 2.5px solid #5208ff81;
   padding: 1.2rem;
   margin-bottom: 1rem;
+}
+
+.select{
+  border-radius: 0.6rem;
+  border: 2.5px solid #5208ff81;
+  margin-bottom: 1rem;
+  height: 2.8rem;
 }
 
 .cad-login{
