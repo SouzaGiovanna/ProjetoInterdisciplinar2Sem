@@ -1717,6 +1717,11 @@ section {
   font-size: 1.2rem;
 }
 
+.cad-login a{
+  color: #fff;
+  text-decoration: none !important;
+}
+
 .cad-login:hover{
   background-color: #5200FF;
 }
