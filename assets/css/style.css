@@ -80,15 +80,29 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 99999;
 }
 
-.modo-escuro i {
+.modo-escuro-branco{
+  position: fixed;
+  /* display: none; */
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  right: 15px;
+  top: 15px;
+  background: #fff;
+  color: var(--color-background);
+  transition: display 0.5s ease-in-out;
+  z-index: 99999;
+}
+
+.modo-escuro i, .modo-escuro-branco i {
   position: absolute;
   top: 8px;
   left: 8px;
 }
 
 .modo-escuro:hover {
-  color: #fff;
-  background: var(--color-background);
+  color: var(--color-background);
+  background: #fff;
   transition: background 0.2s ease-in-out;
 }
 
@@ -1570,3 +1584,144 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+/* Login e cadastro */
+.background-login{
+  background-image: linear-gradient(to right, #5408FF, #8D87D3, #C9D1DA);
+  color: #000;
+}
+
+.background-login a{
+  color: #5200FF;
+}
+
+.main{
+  height: 30rem;
+}
+
+#itens-cadastro{
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+  justify-content: space-around;
+}
+
+.logo-cad-log{
+  width: 10rem;
+}
+
+.text-cad-log{
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.btn-cad-log{
+  background: #fff;
+  font-weight: bold;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 0.6rem;
+  text-align: center;
+  padding-top: .7rem;
+}
+
+.btn-cad-log a{
+  font-size: 1.2rem;
+  color: #5408FF;
+}
+
+#form-login{
+  background-color: #fff;
+  height: 100%;
+  width: max-content;
+  margin-top: 5%;
+  margin-left: 3.5%;
+  margin-bottom: 5%;
+  border-radius: 0rem 10rem 10rem 0rem;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+#form-login form{
+  height: 100%;
+}
+
+#form-login h3{
+  color: #000;
+  margin-bottom: 2rem;
+}
+
+#form-login h5{
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#form-login a{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.input{
+  border-radius: 0.6rem;
+  border: 2.5px solid #5208ff81;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.cad-login{
+  background-color: #5200FF;
+  border-radius: 2rem;
+  width: 100%;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+
+.cad-login:hover{
+  background-color: #5200FF;
+}
+
+.check{
+  display: none;
+}
+
+.checkmark{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  background-color: #c7c7c7;
+  border-radius: .3rem;
+  margin-top: .2rem;
+  border: 2.5px solid #5208ff81;
+}
+
+.form-check:hover .check ~ .checkmark{
+  background-color: #5208ff81;
+}
+
+.check:checked ~ .checkmark{
+  background-color: #ffffff;
+}
+
+.form-check .checkmark:after{
+  content: "";
+  position: absolute;
+  display: none;
+  left: 0.2rem;
+  top: 0.001rem;
+  width: 5px;
+  height: 10px;
+  border: solid #5200FF;
+  border-radius: 0.1rem;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+
+.form-check .check:checked ~ .checkmark:after{
+  display: block;
+}	
