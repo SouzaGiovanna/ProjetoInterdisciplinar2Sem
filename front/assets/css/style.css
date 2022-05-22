@@ -489,7 +489,7 @@ section {
 }
 
 .separator {
-  background-color: --var(--color-background);
+  background-color: var(--color-background);
   color: #fff; 
 }
 
@@ -1736,7 +1736,7 @@ section {
   left: 0;
   height: 1rem;
   width: 1rem;
-  background-color: #c7c7c7;
+  background-color: #fff;
   border-radius: .3rem;
   margin-top: .2rem;
   border: 2.5px solid #5208ff81;
@@ -1768,4 +1768,4 @@ section {
 
 .form-check .check:checked ~ .checkmark:after{
   display: block;
-}	
+}
