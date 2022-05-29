@@ -1913,3 +1913,16 @@ section {
 .nav-link:hover{
   color: #5200FF;
 }
+
+.tab-pane{
+  padding-top: 2%;
+}
+
+.table{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.espaco{
+    margin-right: 0.25rem;
+}  

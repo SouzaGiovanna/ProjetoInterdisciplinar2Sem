@@ -16,16 +16,20 @@
       <link href="../https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   
       <!-- Vendor CSS Files -->
-      <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
       <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
       <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
       <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
       <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
       <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-      <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="../assets/js/bootstrap.min.js"></script>
   
       <!-- Template Main CSS File -->
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
       <link href="../assets/css/style.css" rel="stylesheet">
     </head>
     <body>
@@ -105,14 +109,26 @@
             <li class="nav-item"><a href="#ambientes" data-toggle="tab" role="tab" class="nav-link">Ambientes</a></li>
             <li class="nav-item"><a href="#softwares" data-toggle="tab" role="tab" class="nav-link">Softwares</a></li>
             <li class="nav-item"><a href="#equipamentos" data-toggle="tab" role="tab" class="nav-link">Equipamentos</a></li>
-            <li class="nav-item"><a href="#tab5default" data-toggle="tab" role="tab" class="nav-link">Usuarios ADM</a></li>
+            <li class="nav-item"><a href="#usuarios" data-toggle="tab" role="tab" class="nav-link">Usuarios ADM</a></li>
           </ul>
         </div>
 
         <div class="panel-body">
           <div class="tab-content">
             <div class="tab-pane fade show active" id="status" role="tabpanel">
-              <h2>status</h2>
+              <h3 class="card-title">Tipos de Status</h3>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" style="width: 70%;">Descrição<th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="tipos_status">
+
+                </tbody>
+              </table>
             </div>
             <div class="tab-pane fade" id="ambientes" role="tabpanel">
               <h2>ambientes</h2>
@@ -131,16 +147,20 @@
       </div>
 
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-      <script>
-        let menuToggle = document.querySelector('.toggle');
-        let navigation = document.querySelector('.navigation');
-        menuToggle.onclick = function(){
-          menuToggle.classList.toggle('active');
-          navigation.classList.toggle('active');
-        }
-      </script>
-      
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>      
       <script src="../assets/js/function.js"></script>
+
+      <script>
+        var colunas = ["id", "descricao"];
+        var dados = [
+          { id: 1, descricao: "Aberto" },
+          { id: 2, descricao: "Em andamento" },
+          { id: 3, descricao: "Resolvido" },
+          { id: 4, descricao: "Fechado" },
+          { id: 5, descricao: "Cancelado" }
+        ];
+        // Preenchendo dados da tabela de tipos de status
+        preencherTabela(colunas, "tipos_status", dados);
+      </script>
     </body>
 </html>
