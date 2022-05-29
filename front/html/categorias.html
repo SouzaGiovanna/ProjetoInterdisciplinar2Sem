@@ -118,7 +118,7 @@
             <div class="tab-pane fade show active" id="status" role="tabpanel">
               <div class="titulo-btn">
                 <h3 class="card-title col-8">Tipos de Status</h3>
-                <a href="javascript:void(0)" class="btn btn-primary plus"><i class="bi bi-plus"></i></a>
+                <a href="javascript:void(0)" class="btn btn-primary plus" id="novo-tipo-status"><i class="bi bi-plus"></i></a>
               </div>
               <table class="table">
                 <thead>
@@ -183,6 +183,81 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
               <a data-delete-button class="btn btn-danger">Sim</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-tipo-status" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Editar Tipo de Status</h5>
+              <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="form-tipo-status">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <a class="btn btn-primary">Salvar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-novo-tipo-status" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cadastrar novo Tipo de Status</h5>
+              <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="form-tipo-status">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <a class="btn btn-primary">Salvar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-novo-status" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cadastrar novo Status</h5>
+              <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="form-tipo-status">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <a class="btn btn-primary">Salvar</a>
             </div>
           </div>
         </div>

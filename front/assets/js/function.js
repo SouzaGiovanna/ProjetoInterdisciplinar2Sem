@@ -90,9 +90,13 @@ function createActionButtons(tr){
 
     var editButton = document.createElement("a");
     editButton.classList.add("btn", "btn-warning", "btn-sm");
+    editButton.dataset.toggle = "tooltip";
+    editButton.title = "Editar";
     editButton.href = "javascript:void(0)";
+    editButton.dataset.type = "crud-edit";
+    editButton.dataset.href = ""; //Aqui tem que ficar a url para editar
     editButton.addEventListener("click", () => {
-        alert("Editar tabela: " +tabela+", linha: " +dado.id);
+        $(document.querySelector("#modal-tipo-status")).modal("show");
     });
 
     var lapis = document.createElement("i");
@@ -124,5 +128,11 @@ function createActionButtons(tr){
 document.querySelectorAll("button[data-dismiss]").forEach(button => {
     addEventListener("click", () => {
         $(document.querySelector("#modal-delete")).modal("hide");
+        $(document.querySelector("#modal-tipo-status")).modal("hide");
+        $(document.querySelector("#modal-novo-tipo-status")).modal("hide");
     });
+});
+
+document.getElementById("novo-tipo-status").addEventListener("click", () => {
+    $(document.querySelector("#modal-novo-tipo-status")).modal("show");
 });
