@@ -184,13 +184,13 @@
         preencherTabela(colunas, "tipos_status", dados);
 
         // Preenchendo dados da tabela de status
-        colunas = ["id", "descricao", "tipo_status"];
+        colunas = ["id", "status", "tipo_status"];
         dados = [
-          { id: 1, descricao: "Ativo", tipo_status: "Aberto"},
-          { id: 2, descricao: "Inativo", tipo_status: "Em andamento" },
-          { id: 3, descricao: "Cancelado", tipo_status: "Resolvido" },
-          { id: 4, descricao: "Fechado", tipo_status: "Fechado" },
-          { id: 5, descricao: "Cancelado", tipo_status: "Cancelado" }
+          { id: 1, status: {descricao: "Ativo", cor:"#05F000"}, tipo_status: "Aberto"},
+          { id: 2, status: {descricao: "Ativo", cor:"#05F000"}, tipo_status: "Em andamento"},
+          { id: 3, status: {descricao: "Ativo", cor:"#05F000"}, tipo_status: "Resolvido"},
+          { id: 4, status: {descricao: "Inativo", cor:"#727272"}, tipo_status: "Fechado"},
+          { id: 5, status: {descricao: "Inativo", cor:"#727272"}, tipo_status: "Cancelado"}
         ];
         preencherTabela(colunas, "status_list", dados);
       </script>

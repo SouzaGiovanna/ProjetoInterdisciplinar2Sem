@@ -58,6 +58,23 @@ function preencherTabela(colunas, tabela, dados){
             let td = tr.querySelector("td[data-gs-id="+colunas[i]+"]") ?? document.createElement("td");
             td.dataset.gsId = colunas[i];
             td.textContent = dado[colunas[i]];
+
+            if(dado[colunas[i]] instanceof Object) {
+                let td = tr.querySelector("td[data-gs-id="+colunas[i]+"]") ?? document.createElement("td");
+                td.dataset.gsId = colunas[i];
+
+                let span = document.createElement("span");
+                span.classList.add("badge");
+                span.style.backgroundColor = dado["status"].cor+"80";
+                span.style.color = "black";
+                span.textContent = dado["status"].descricao;
+
+                td.appendChild(span);
+
+                tr.appendChild(td);
+                continue;
+            }
+            
             tr.appendChild(td);
         }
     
