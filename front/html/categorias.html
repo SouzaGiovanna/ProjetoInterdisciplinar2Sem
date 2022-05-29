@@ -116,16 +116,37 @@
         <div class="panel-body">
           <div class="tab-content">
             <div class="tab-pane fade show active" id="status" role="tabpanel">
-              <h3 class="card-title">Tipos de Status</h3>
+              <div class="titulo-btn">
+                <h3 class="card-title col-8">Tipos de Status</h3>
+                <a href="javascript:void(0)" class="btn btn-primary plus"><i class="bi bi-plus"></i></a>
+              </div>
               <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col" style="width: 70%;">Descrição<th>
+                    <th scope="col" style="width: 90%;">Descrição</th>
                     <th scope="col">Ações</th>
                   </tr>
                 </thead>
                 <tbody id="tipos_status">
+
+                </tbody>
+              </table>
+
+              <div class="titulo-btn">
+                <h3 class="card-title col-8">Status</h3>
+                <a href="javascript:void(0)" class="btn btn-primary plus"><i class="bi bi-plus"></i></a>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" style="width: 50%;">Descrição</th>
+                    <th scope="col" style="width: 40%;">Tipo de Status</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="status_list">
 
                 </tbody>
               </table>
@@ -151,16 +172,27 @@
       <script src="../assets/js/function.js"></script>
 
       <script>
-        var colunas = ["id", "descricao"];
-        var dados = [
+        // Preenchendo dados da tabela de tipos de status
+        let colunas = ["id", "descricao"];
+        let dados = [
           { id: 1, descricao: "Aberto" },
           { id: 2, descricao: "Em andamento" },
           { id: 3, descricao: "Resolvido" },
           { id: 4, descricao: "Fechado" },
           { id: 5, descricao: "Cancelado" }
         ];
-        // Preenchendo dados da tabela de tipos de status
         preencherTabela(colunas, "tipos_status", dados);
+
+        // Preenchendo dados da tabela de status
+        colunas = ["id", "descricao", "tipo_status"];
+        dados = [
+          { id: 1, descricao: "Ativo", tipo_status: "Aberto"},
+          { id: 2, descricao: "Inativo", tipo_status: "Em andamento" },
+          { id: 3, descricao: "Cancelado", tipo_status: "Resolvido" },
+          { id: 4, descricao: "Fechado", tipo_status: "Fechado" },
+          { id: 5, descricao: "Cancelado", tipo_status: "Cancelado" }
+        ];
+        preencherTabela(colunas, "status_list", dados);
       </script>
     </body>
 </html>

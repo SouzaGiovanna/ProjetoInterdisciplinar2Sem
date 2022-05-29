@@ -49,9 +49,9 @@ try{
 }
 
 function preencherTabela(colunas, tabela, dados){
-    const tbody = document.getElementById(tabela);
+    var tbody = document.getElementById(tabela);
     dados.forEach(dado => {
-        var tr = tbody.querySelector("tr[data-gs-tabela-id='"+dado.id+"']") ?? document.createElement("tr");
+        var tr = tbody.querySelector("tr[data-gs-"+tabela+"-id='"+dado.id+"']") ?? document.createElement("tr");
         tr.dataset.gsTabelaId = dado.id;
     
         for(let i = 0; i < colunas.length; i++){
@@ -60,38 +60,42 @@ function preencherTabela(colunas, tabela, dados){
             td.textContent = dado[colunas[i]];
             tr.appendChild(td);
         }
-
-        var tdAcoes = tr.querySelector("td[data-gs-acoes]") ?? document.createElement("td");
-        tdAcoes.dataset.gsId = "acoes";
-
-        var editButton = document.createElement("a");
-        editButton.classList.add("btn", "btn-warning", "btn-sm");
-        editButton.href = "javascript:void(0)";
-        editButton.addEventListener("click", () => {
-            alert("Editar tabela: " +tabela+", linha: " +dado.id);
-        });
-
-        var lapis = document.createElement("i");
-        lapis.classList.add("bi", "bi-pen");
-        editButton.appendChild(lapis);
-
-        var deleteButton = document.createElement("a");
-        deleteButton.classList.add("btn", "btn-danger", "btn-sm");
-        deleteButton.href = "javascript:void(0)";
-        deleteButton.addEventListener("click", () => {
-            alert("Excluir tabela: " +tabela+", linha: " +dado.id);
-        });
-
-        var lixo = document.createElement("i");
-        lixo.classList.add("bi", "bi-trash");
-        deleteButton.appendChild(lixo);
-
-        tdAcoes.innerHTML = "";
-        tdAcoes.appendChild(editButton);
-        tdAcoes.appendChild(deleteButton);
     
-        tr.appendChild(tdAcoes);
+        tr.appendChild(createActionButtons(tr));
 
         tbody.appendChild(tr);
     });
+}
+
+function createActionButtons(tr){
+    var tdAcoes = tr.querySelector("td[data-gs-acoes]") ?? document.createElement("td");
+    tdAcoes.dataset.gsId = "acoes";
+
+    var editButton = document.createElement("a");
+    editButton.classList.add("btn", "btn-warning", "btn-sm");
+    editButton.href = "javascript:void(0)";
+    editButton.addEventListener("click", () => {
+        alert("Editar tabela: " +tabela+", linha: " +dado.id);
+    });
+
+    var lapis = document.createElement("i");
+    lapis.classList.add("bi", "bi-pen");
+    editButton.appendChild(lapis);
+
+    var deleteButton = document.createElement("a");
+    deleteButton.classList.add("btn", "btn-danger", "btn-sm");
+    deleteButton.href = "javascript:void(0)";
+    deleteButton.addEventListener("click", () => {
+        alert("Excluir tabela: " +tabela+", linha: " +dado.id);
+    });
+
+    var lixo = document.createElement("i");
+    lixo.classList.add("bi", "bi-trash");
+    deleteButton.appendChild(lixo);
+
+    tdAcoes.innerHTML = "";
+    tdAcoes.appendChild(editButton);
+    tdAcoes.appendChild(deleteButton);
+
+    return tdAcoes;
 }
