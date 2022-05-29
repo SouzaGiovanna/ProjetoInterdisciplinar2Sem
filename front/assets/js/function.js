@@ -101,9 +101,13 @@ function createActionButtons(tr){
 
     var deleteButton = document.createElement("a");
     deleteButton.classList.add("btn", "btn-danger", "btn-sm");
+    deleteButton.dataset.toggle = "tooltip";
+    deleteButton.title = "Excluir";
     deleteButton.href = "javascript:void(0)";
-    deleteButton.addEventListener("click", () => {
-        alert("Excluir tabela: " +tabela+", linha: " +dado.id);
+    deleteButton.dataset.type = "crud-delete";
+    deleteButton.dataset.href = ""; //Aqui tem que ficar a url do delete
+    deleteButton.addEventListener("click", (event) => {
+        $(document.querySelector("#modal-delete")).modal("show");
     });
 
     var lixo = document.createElement("i");
@@ -116,3 +120,9 @@ function createActionButtons(tr){
 
     return tdAcoes;
 }
+
+document.querySelectorAll("button[data-dismiss]").forEach(button => {
+    addEventListener("click", () => {
+        $(document.querySelector("#modal-delete")).modal("hide");
+    });
+});
