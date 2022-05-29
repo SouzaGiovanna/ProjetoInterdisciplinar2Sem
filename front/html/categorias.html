@@ -16,12 +16,14 @@
       <link href="../https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   
       <!-- Vendor CSS Files -->
-      <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
       <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
       <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
       <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
       <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
       <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+
+      <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   
       <!-- Template Main CSS File -->
       <link href="../assets/css/style.css" rel="stylesheet">
@@ -85,22 +87,48 @@
                 </a>
             </li>
         </ul>
-    </div>
+      </div>
 
-    <div class="toggle">
-      <ion-icon name="menu-outline" class="open"></ion-icon>
-      <ion-icon name="close-outline" class="close"></ion-icon>
-    </div>
+      <div class="toggle">
+        <ion-icon name="menu-outline" class="open"></ion-icon>
+        <ion-icon name="close-outline" class="close"></ion-icon>
+      </div>
+      <!-- ======= Fim Sidebar ======= -->
+
+      <img id="logo-interna" src="../assets/img/LogoInterna.png" alt="">
 
       <!-- ======= Tab header ======= -->
-      <!--<div class="panel with-nav-tabs panel-default">
+      <div class="panel with-nav-tabs panel-default">
         <div class="panel-heading">
           <ul class="nav nav-tabs mb-0" role="tablist">
-            <li class="nav-item"><a href="#tab1default" data-toggle="tab" class="nav-link active">Categorias</a></li>
-            <li class="nav-item"><a href="#tab2default" data-toggle="tab" class="nav-link">Adicionar</a></li>
+            <li class="nav-item"><a href="#status" data-toggle="tab" role="tab" class="nav-link active">Status</a></li>
+            <li class="nav-item"><a href="#ambientes" data-toggle="tab" role="tab" class="nav-link">Ambientes</a></li>
+            <li class="nav-item"><a href="#softwares" data-toggle="tab" role="tab" class="nav-link">Softwares</a></li>
+            <li class="nav-item"><a href="#equipamentos" data-toggle="tab" role="tab" class="nav-link">Equipamentos</a></li>
+            <li class="nav-item"><a href="#tab5default" data-toggle="tab" role="tab" class="nav-link">Usuarios ADM</a></li>
           </ul>
         </div>
-      </div>-->
+
+        <div class="panel-body">
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="status" role="tabpanel">
+              <h2>status</h2>
+            </div>
+            <div class="tab-pane fade" id="ambientes" role="tabpanel">
+              <h2>ambientes</h2>
+            </div>
+            <div class="tab-pane fade" id="softwares" role="tabpanel">
+              <h2>softwares</h2>
+            </div>
+            <div class="tab-pane fade" id="equipamentos" role="tabpanel">
+              <h2>equpamentos</h2>
+            </div>
+            <div class="tab-pane fade" id="usuarios" role="tabpanel">
+              <h2>usuarios</h2>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -112,5 +140,7 @@
           navigation.classList.toggle('active');
         }
       </script>
+      
+      <script src="../assets/js/function.js"></script>
     </body>
 </html>

@@ -1769,26 +1769,9 @@ section {
 .form-check .check:checked ~ .checkmark:after{
   display: block;
 }
-
 /* Fim Login e cadastro */
 
 /* Side-bar */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body{
-  min-height: 100vh;
-  background-color: #fff;
-}
-
-h1{
-  padding-left: 10%;
-  padding-top: 5%;
-}
-
 .navigation{
   position: fixed;
   top: 20px;
@@ -1897,4 +1880,36 @@ h1{
 
 .toggle.active ion-icon.open, .toggle ion-icon.close{
   display: block;
+}
+/* Fim Side-bar */
+
+#logo-interna{
+  display: block;
+  margin-left: calc(30% + 300px);
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.panel{
+  margin-left: 22%;
+  margin-right: 2%;
+  font-size: 1.3em;
+}
+
+.nav-tabs{
+  border-bottom: 1px solid #5200FF;
+}
+
+.nav-tabs .nav-link.active{
+  border-color: #5200ff #5200ff #fff;
+  border-radius: 10px 10px 0 0;
+}
+
+.nav-link{
+  color: #838282;
+}
+
+.nav-link:hover{
+  color: #5200FF;
 }
