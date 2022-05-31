@@ -1956,7 +1956,12 @@ section {
   font-size: 1.6em;
 }
 
-.form-control{
+.form-control, .form-select{
   border-radius: 10px;
   border: 1px solid #5200ff;
+  margin-bottom: 2%;
+}
+
+.form-control[type="color"]{
+  height: 37px;
 }

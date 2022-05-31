@@ -78,13 +78,24 @@ function preencherTabela(colunas, tabela, dados){
             tr.appendChild(td);
         }
     
-        tr.appendChild(createActionButtons(tr));
+        tr.appendChild(createActionButtons(tr, tabela));
 
         tbody.appendChild(tr);
     });
 }
 
-function createActionButtons(tr){
+function preencherSelect(select, dados){
+    select = document.getElementById(select);
+    for(var i = 0; i < dados.length; i++) {
+        var option = document.createElement("option");
+        option.value = dados[i].id;
+        option.textContent = dados[i].descricao;
+
+        select.append(option);
+    }
+}
+
+function createActionButtons(tr, tabela){
     var tdAcoes = tr.querySelector("td[data-gs-acoes]") ?? document.createElement("td");
     tdAcoes.dataset.gsId = "acoes";
 
@@ -96,7 +107,7 @@ function createActionButtons(tr){
     editButton.dataset.type = "crud-edit";
     editButton.dataset.href = ""; //Aqui tem que ficar a url para editar
     editButton.addEventListener("click", () => {
-        $(document.querySelector("#modal-tipo-status")).modal("show");
+        $(document.querySelector("#modal-"+tabela.replace(/_/gi, "-"))).modal("show");
     });
 
     var lapis = document.createElement("i");
@@ -126,13 +137,19 @@ function createActionButtons(tr){
 }
 
 document.querySelectorAll("button[data-dismiss]").forEach(button => {
-    addEventListener("click", () => {
+    button.addEventListener("click", () => {
         $(document.querySelector("#modal-delete")).modal("hide");
-        $(document.querySelector("#modal-tipo-status")).modal("hide");
+        $(document.querySelector("#modal-tipos-status")).modal("hide");
         $(document.querySelector("#modal-novo-tipo-status")).modal("hide");
+        $(document.querySelector("#modal-novo-status")).modal("hide");
+        $(document.querySelector("#modal-status-list")).modal("hide");
     });
 });
 
 document.getElementById("novo-tipo-status").addEventListener("click", () => {
     $(document.querySelector("#modal-novo-tipo-status")).modal("show");
 });
+
+document.getElementById("novo-status").addEventListener("click", () => {
+    $(document.querySelector("#modal-novo-status")).modal("show");
+})

@@ -135,7 +135,7 @@
 
               <div class="titulo-btn">
                 <h3 class="card-title col-8">Status</h3>
-                <a href="javascript:void(0)" class="btn btn-primary plus"><i class="bi bi-plus"></i></a>
+                <a href="javascript:void(0)" class="btn btn-primary plus" id="novo-status"><i class="bi bi-plus"></i></a>
               </div>
               <table class="table">
                 <thead>
@@ -188,7 +188,7 @@
         </div>
       </div>
 
-      <div class="modal fade" id="modal-tipo-status" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal fade" id="modal-tipos-status" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -250,8 +250,49 @@
                 <div class="form-group">
                   <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
                 </div>
+                <div class="row">
+                  <div class="form-group col">
+                    <select class="form-select" aria-label="Default select example" id="tipo_status_select" name="tipo_status">
+                      <option selected disabled>Tipo de Status</option>
+                    </select>
+                  </div>
+                  <div class="form-group col">
+                    <input type="color" class="form-control" id="cor" name="cor">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <a class="btn btn-primary">Salvar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-status-list" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Editar Status</h5>
+              <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="form-tipo-status">
                 <div class="form-group">
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+                </div>
+                <div class="row">
+                  <div class="form-group col">
+                    <select class="form-select" aria-label="Default select example" id="tipo_status_select" name="tipo_status">
+                      <option selected disabled>Tipo de Status</option>
+                    </select>
+                  </div>
+                  <div class="form-group col">
+                    <input type="color" class="form-control" id="cor" name="cor">
+                  </div>
                 </div>
               </form>
             </div>
@@ -291,6 +332,16 @@
           { id: 5, status: {descricao: "Inativo", cor:"#727272"}, tipo_status: "Cancelado"}
         ];
         preencherTabela(colunas, "status_list", dados);
+
+        // Preenchendo dados do select de tipos de status
+        dados = [
+          { id: 1, descricao: "Aberto" },
+          { id: 2, descricao: "Em andamento" },
+          { id: 3, descricao: "Resolvido" },
+          { id: 4, descricao: "Fechado" },
+          { id: 5, descricao: "Cancelado" }
+        ];
+        preencherSelect("tipo_status_select", dados)
       </script>
     </body>
 </html>
