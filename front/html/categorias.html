@@ -105,8 +105,8 @@
       <div class="panel with-nav-tabs panel-default">
         <div class="panel-heading">
           <ul class="nav nav-tabs mb-0" role="tablist">
-            <li class="nav-item"><a href="#status" data-toggle="tab" role="tab" class="nav-link active">Status</a></li>
-            <li class="nav-item"><a href="#ambientes" data-toggle="tab" role="tab" class="nav-link">Ambientes</a></li>
+            <li class="nav-item"><a href="#status" data-toggle="tab" role="tab" class="nav-link">Status</a></li>
+            <li class="nav-item"><a href="#ambientes" data-toggle="tab" role="tab" class="nav-link active">Ambientes</a></li>
             <li class="nav-item"><a href="#softwares" data-toggle="tab" role="tab" class="nav-link">Softwares</a></li>
             <li class="nav-item"><a href="#equipamentos" data-toggle="tab" role="tab" class="nav-link">Equipamentos</a></li>
             <li class="nav-item"><a href="#usuarios" data-toggle="tab" role="tab" class="nav-link">Usuarios ADM</a></li>
@@ -115,7 +115,7 @@
 
         <div class="panel-body">
           <div class="tab-content">
-            <div class="tab-pane fade show active" id="status" role="tabpanel">
+            <div class="tab-pane fade" id="status" role="tabpanel">
               <div class="titulo-btn">
                 <h3 class="card-title col-8">Tipos de Status</h3>
                 <a href="javascript:void(0)" class="btn btn-primary plus" id="novo-tipo-status"><i class="bi bi-plus"></i></a>
@@ -151,8 +151,26 @@
                 </tbody>
               </table>
             </div>
-            <div class="tab-pane fade" id="ambientes" role="tabpanel">
-              <h2>ambientes</h2>
+            <div class="tab-pane fade show active" id="ambientes" role="tabpanel">
+              <div class="titulo-btn">
+                <h3 class="card-title col-8">Ambientes</h3>
+                <a href="javascript:void(0)" class="btn btn-primary plus" id="novo-ambiente"><i class="bi bi-plus"></i></a>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" style="width: 40%;">Descrição</th>
+                    <th scope="col">Prédio</th>
+                    <th scope="col">Sala</th>
+                    <th scope="col">Andar</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="ambientes_list">
+                  
+                </tbody>
+              </table>
             </div>
             <div class="tab-pane fade" id="softwares" role="tabpanel">
               <h2>softwares</h2>
@@ -304,6 +322,76 @@
         </div>
       </div>
 
+      <div class="modal fade" id="modal-novo-ambiente" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cadastrar novo Ambiente</h5>
+              <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="form-tipo-status">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+                </div>
+                <div class="row">
+                  <div class="form-group col">
+                    <input type="text" class="form-control" id="predio", name="predio" placeholder="Prédio">
+                  </div>
+                  <div class="form-group col">
+                    <input type="number" class="form-control" id="sala" name="sala" placeholder="Sala">
+                  </div>
+                  <div class="form-group col">
+                    <input type="number" class="form-control" id="andar" name="andar" placeholder="Andar">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <a class="btn btn-primary">Salvar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-ambientes-list" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Editar Ambiente</h5>
+              <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="form-tipo-status">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+                </div>
+                <div class="row">
+                  <div class="form-group col">
+                    <input type="text" class="form-control" id="predio", name="predio" placeholder="Prédio">
+                  </div>
+                  <div class="form-group col">
+                    <input type="number" class="form-control" id="sala" name="sala" placeholder="Sala">
+                  </div>
+                  <div class="form-group col">
+                    <input type="number" class="form-control" id="andar" name="andar" placeholder="Andar">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <a class="btn btn-primary">Salvar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>      
       <script src="../assets/js/function.js"></script>
@@ -332,6 +420,21 @@
           { id: 5, status: {descricao: "Inativo", cor:"#727272"}, tipo_status: "Cancelado"}
         ];
         preencherTabela(colunas, "status_list", dados);
+
+        // Preenchendo dados da tabela de ambientes
+        colunas = ["id", "descricao", "predio", "sala", "andar"];
+        dados = [
+          { id: 1, descricao: "Laboratório", predio: "A", sala: 125, andar: 1 },
+          { id: 2, descricao: "Sala", predio: "B", sala: 213, andar: 2},
+          { id: 3, descricao: "Sala", predio: "C", sala: 123, andar: 3},
+          { id: 4, descricao: "Sala", predio: "D", sala: 123, andar: 4},
+          { id: 5, descricao: "Sala", predio: "E", sala: 123, andar: 5},
+          { id: 6, descricao: "Sala", predio: "F", sala: 123, andar: 6},
+          { id: 7, descricao: "Sala", predio: "G", sala: 123, andar: 7},
+          { id: 8, descricao: "Sala", predio: "H", sala: 123, andar: 8},
+          { id: 9, descricao: "Sala", predio: "I", sala: 123, andar: 9}
+        ];
+        preencherTabela(colunas, "ambientes_list", dados);
 
         // Preenchendo dados do select de tipos de status
         dados = [
