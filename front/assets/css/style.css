@@ -1965,3 +1965,12 @@ section {
 .form-control[type="color"]{
   height: 37px;
 }
+
+.panel .form-control[type="number"], .form-control, .form-select, .salvar{
+  height: 50px;
+  font-size: 1em;
+}
+
+.salvar{
+  height: 60px;
+}
